@@ -48,8 +48,11 @@ public class BoardView extends View {
         mPaint.setStrokeWidth(GRID_WIDTH);
         // Draw the two vertical board lines
         int cellWidth = boardWidth / 3;
+        int cellHeight = boardHeight / 3;
         canvas.drawLine(cellWidth, 0, cellWidth, boardHeight, mPaint);
         canvas.drawLine(cellWidth * 2, 0, cellWidth * 2, boardHeight, mPaint);
+        canvas.drawLine(0, cellHeight, boardWidth, cellHeight, mPaint);
+        canvas.drawLine(0, cellHeight*2, boardWidth, cellHeight*2, mPaint);
 
         // Draw all the X and O images
         for (int i = 0; i < TicTacToeGame.BOARD_SIZE; i++) {
